@@ -1,8 +1,8 @@
 FROM ruby:2.7.7
-WORKDIR /app/
+WORKDIR /app
 COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 RUN gem install --default bundler -v 2.3.26
 RUN bundle install
-ADD . /app/
+COPY . .
 CMD ["ruby","exec","ruby","/app/app.rb"]
