@@ -4,4 +4,4 @@ COPY Gemfile Gemfile
 COPY Gemfile.lock Gemfile.lock
 RUN bundle install
 COPY . .
-CMD ["ruby","exec","ruby","/app/app.rb"]
+CMD ["bundle","exec","ruby","/app/app.rb"]
